@@ -68,7 +68,6 @@ static stagnation_pct = GSController.GetSetting("stagpct").tofloat() / 1000.0;
 static slow_factor = GSController.GetSetting("slow_factor").tofloat();
 static assim_factor = GSController.GetSetting("assim_factor");
 static fullratio = GSController.GetSetting("mgrpct").tofloat() / 1000.0 + 1.0;
-static mailcargo = GSController.GetSetting("metro_need");
 static inject = GSController.GetSetting("injection");
 static lowcargo = GSController.GetSetting("lowcargo");
 static has_news = GSController.GetSetting("info_broadcast");

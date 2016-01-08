@@ -273,6 +273,7 @@ function CityBuilder::SetupEconomy() {
             this.myEcon = econ_toyland(); 
             break;    
     }
+    this.myEcon.init();
         return;
 }
 

@@ -32,7 +32,6 @@ class econ {
     tpa = [0,1,1,0,0];
         
     constructor() {	
-        this.init();
     }
     function init();    
     function deliveryReqs(population, cargo_produced, accept_reqs, prod_reqs, townID);
@@ -46,7 +45,8 @@ function econ::getPaxCargo() {return 1;}
 function econ::getMailCargo() {return 2;}
 
 function econ::init() {
-        this.townprod_fct = GSController.GetSetting("townTR"); 
+     this.multiplier_car = GSController.GetSetting("cargomul");
+     this.multiplier_pop = GSController.GetSetting("intromul");
         for(local i = 0; i < this.num_cargos; ++i) {
             this.enable_populations[i] *= this.multiplier_pop;
             this.enable_populations[i] /= 1000;

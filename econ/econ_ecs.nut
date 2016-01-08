@@ -38,8 +38,8 @@ require("econ.nut");
         // Cargo enable order, Needs to be overridden
         num_cargos = 11;
         enable_order = [BRICKS, WATER, FOOD, PASS, MAIL, GOODS, CEMENT, PETROL, CARS ,GOLD, TOUR];
-        enable_populations = [200, 500, 1000, 2000, 3000, 5000, 10000, 20000, 30000, 50000, 80000];
-        max_populations = [700, 1750, 3500, 6500, 9000, 15000, 25000,40000,55000,75000, 100000];
+        enable_populations = [200, 400, 650, 1000, 1500, 2250, 3500, 5000, 7000, 10000, 15000];
+        max_populations = [500, 800, 1250, 1900, 2750, 4250, 6000, 8500, 12000, 17500, 25000];
         decay_rates = [50, 150, 175, 1000, 1000, 100, 50, 75, 50, 20, 1000];
         
         // 'Town accepted' absolute cargo amounts. Needs to be overridden

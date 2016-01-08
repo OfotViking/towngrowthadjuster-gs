@@ -62,9 +62,7 @@ class CityBuilder extends GSInfo {
 		AddSetting({name = "metro_gmod", description = "Metropolis growth multiplier:"
 			easy_value = 3, medium_value = 2, hard_value = 1, custom_value = 1, flags = CONFIG_INGAME, min_value = 1, max_value = 500});			
 		AddSetting({name = "metro_cgg", description = "Metropolis transport requirement (MTR): "
-			easy_value = 50, medium_value = 65, hard_value = 80, custom_value = 70, flags = CONFIG_INGAME, min_value = 30, max_value = 98});			
-		AddSetting({name = "townTR", description = "Town cargo transport requirement (promille): "
-			easy_value = 500, medium_value = 600, hard_value = 700, custom_value = 700, flags = CONFIG_INGAME, min_value = 0, max_value = 980});
+			easy_value = 50, medium_value = 65, hard_value = 80, custom_value = 70, flags = CONFIG_INGAME, min_value = 30, max_value = 98});		
 		AddSetting({name = "local_to_req", description = "Subtract local transported passengers "
 			easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0, flags = CONFIG_INGAME | CONFIG_BOOLEAN});
 		AddSetting({name = "maxclaimsize", description = "Maximum population of a claimable town: ", 
@@ -75,9 +73,7 @@ class CityBuilder extends GSInfo {
 		AddSetting({name = "min_size_max_growth", description = "Below this population growth is linear: ", 
 			easy_value = 1200, medium_value = 800, hard_value = 400, custom_value = 600, flags = CONFIG_INGAME, min_value = 50, max_value = 8000, step_size = 25});
 		AddSetting({name = "min_size_tr", description = "Below this population all towns grow: ", 
-			easy_value = 150, medium_value = 125, hard_value = 100, custom_value = 100, flags = CONFIG_INGAME, min_value = 50, max_value = 40000, step_size = 25});			
-		AddSetting({name = "cargo_sigma", description = "variation in cargo requirements (%): ", 
-			easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0, flags = CONFIG_INGAME, min_value = 0, max_value = 25});
+			easy_value = 150, medium_value = 125, hard_value = 100, custom_value = 100, flags = CONFIG_INGAME, min_value = 50, max_value = 40000, step_size = 25});	
 		AddSetting({name = "slow_factor", description = "Town size at which town grows with one house per day in thousands: ", 
 			easy_value = 60, medium_value = 60, hard_value = 60, custom_value = 60, flags = CONFIG_INGAME, min_value = 10, max_value = 1000});
 		AddSetting({name = "mgrpct", description = "Max growth promillage:", 
@@ -94,7 +90,7 @@ class CityBuilder extends GSInfo {
 			easy_value = 140, medium_value = 120, hard_value = 100, custom_value = 120, flags=0, min_value = 100, step_size = 10, max_value = 300});
 		AddLabels("town_regrow", {_100 = "Do NOT regrow"});
 		AddSetting({name = "cities_setting", description = "Behaviour of cities: ",
-			easy_value = 0, medium_value = 1, hard_value = 0, custom_value = 6, flags = CONFIG_INGAME, min_value = 0, max_value = 6});
+			easy_value = 0, medium_value = 0, hard_value = 6, custom_value = 6, flags = CONFIG_INGAME, min_value = 0, max_value = 6});
 		AddLabels("cities_setting", {_0 = "cities grow normally", _1= "cities grow above MTR", _2 = "cities grow randomly above MTR",_3 = "cities grow per citybuilder rules", 
 		_4 = "citybuilder rules, but no passengers required", _5 = "CB, no mail", _6 = "CB, no passengers nor mail"} );
 		AddSetting({name = "city_cgg", description = "City growth Multiplier promillage: "
@@ -103,18 +99,14 @@ class CityBuilder extends GSInfo {
 		AddSetting({name = "injection", description = "Enable Freeze:", easy_value = 0, medium_value = 0, hard_value = 1, custom_value = 0, flags = CONFIG_INGAME, min_value = 0, max_value = 1});
 		AddLabels("injection", {_0 = "Off", _1 = "On"});
 		AddSetting({name = "paxcargo_istownind", description = "Industries that produce Passengers are Town Industries", 
-			easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0, flags = CONFIG_INGAME | CONFIG_BOOLEAN});
-		AddSetting({name = "metro_cargo", description = "The cargo ID representing passengers:",
-			easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0, flags = CONFIG_INGAME, min_value = 0, max_value = 31});		
-		AddSetting({name = "metro_need", description = "The cargo ID representing mail:",
-			easy_value = 2, medium_value = 2, hard_value = 2, custom_value = 2, flags = CONFIG_INGAME, min_value = 0, max_value = 31});						
+			easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0, flags = CONFIG_INGAME | CONFIG_BOOLEAN});					
 		AddSetting({name = "swapfw", description = "Towns in the tropic require no water but more food: ", easy_value = 1, medium_value = 1, hard_value = 1, custom_value = 1, flags = CONFIG_INGAME, min_value = 0, max_value = 1});
 		AddLabels("swapfw", {_0 = "No", _1 = "Yes"});
 		AddSetting({name = "lowcargo", description = "Reduced shrink effect:",
 			easy_value = 360, medium_value = 180, hard_value = 20, custom_value = 60, flags = CONFIG_INGAME, min_value = 0, max_value = 1000, step_size = 20});
 		AddLabels("lowcargo", {_0 = "Disabled"});
 		AddSetting({name = "introdelay", description = "Introduction Delay (yrs): ",
-			easy_value = 3, medium_value = 2, hard_value = 1, custom_value = 1, flags = CONFIG_INGAME, min_value = 0, max_value = 60});	
+			easy_value = 5, medium_value = 3, hard_value = 2, custom_value = 2, flags = CONFIG_INGAME, min_value = 0, max_value = 60});	
 		AddLabels("introdelay", {_0 = "Disabled"});
 		AddSetting({name = "cargomul", description = "Cargo Requirement Multiplier",
 			easy_value = 1000, medium_value = 1100, hard_value = 1200, custom_value = 1000, flags=0, min_value = 100, max_value = 5000});		
