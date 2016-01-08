@@ -73,6 +73,13 @@ function econ::deliveryReqs(population, cargo_produced, accept_reqs, prod_reqs, 
             prod_reqs[i] = this.computeProdReq(population, i, cargo_produced[i],townID);  
             accept_reqs[i] = this.computeAcceptReq(population, i, cargo_produced[i],townID);
         }
+        // Require at least 1 unit of cargo iff population > minimum
+        if(prod_reqs[i] == 0 && this.prod_rel[i] > 0) {
+            prod_reqs[i] = 1;
+        }
+        if(accept_reqs[i] == 0 && this.accept_rel[i] > 0) {
+            accept_reqs[i] = 1;
+        }
         ++i;
     }
     while(i < this.num_cargos) {
