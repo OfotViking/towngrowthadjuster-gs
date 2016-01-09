@@ -112,6 +112,8 @@ STR_CITYBUILDER_TW_G                :{}{LTBLUE}{CARGO_LIST}: {BLUE}{NUM} {BLACK}
 STR_CITYBUILDER_TW_NEXT             :{}{BLACK}Volgende: {LTBLUE}{CARGO_LIST}{BLACK} bij een bevolking van {RED}{NUM}{BLACK} mens{P "" en}!
 STR_CITYBUILDER_TW_HAMLET           :{WHITE}Dit gehucht is zo klein dat het vanzelf groeit!
 STR_CITYBUILDER_TW_VILLAGE          :{}{WHITE}Dit dorp heeft een maandelijkse passagiersvervoersdienst nodig om te groeien.
+STR_CITYBUILDER_TW_MA               :{}{LTBLUE}{CARGO_LIST}: {BLACK}{RAW_STRING}
+STR_CITYBUILDER_TW_MD               :{}{LTBLUE}{CARGO_LIST}: {BLACK}{RAW_STRING}
 
 STR_CITYBUILDER_SB_GOTO             :{GREEN}Ga naar de plaats
 STR_CITYBUILDER_SB_POPULATION       :Aantal inwoners: {YELLOW}{NUM}
