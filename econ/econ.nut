@@ -8,6 +8,7 @@
 
 class econ {
 
+    month_lengths = [31,28,31,30,31, 30,31,31,30,31, 30,31];
     // Total cargo requirement.     
     multiplier_car = 1000;    
     multiplier_pop = 1000;    
@@ -95,7 +96,8 @@ function econ::computeAcceptReq(population, i, production, townID) {
     if(tpa[i] == 0) {
         return accept_rel[i] * population / 1000;
     } else {
-       return accept_rel[i] * population / 1000 + production * townprod_fct / 1000;     
+        local m = GSDate.GetMonth(GSDate.GetCurrentDate()) - 1;
+       return accept_rel[i] * population / 1000 + production * townprod_fct / 1000 * month_lengths[m] / month_lengths[(m+11)%12];     
     }
 }
 
