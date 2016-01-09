@@ -56,38 +56,38 @@ class CityBuilder extends GSInfo {
 			easy_value = 0, medium_value = 1, hard_value = 1, custom_value = 1, flags = CONFIG_INGAME, min_value = 0, max_value = 3});
 		AddLabels("gametype", {_0 = "FreeBuilder", _1 = "CityBuilder", _2 = "CityBuilder Co-Op", _3 = "Metropolis"});
 		AddSetting({name = "hqmaxdist", description = "Maximum HQ distance to claim town: "
-			easy_value = 20, medium_value = 15, hard_value = 10, custom_value = 12, flags=0, min_value = 5, max_value = 32});
+			easy_value = 20, medium_value = 15, hard_value = 12, custom_value = 10, flags=0, min_value = 5, max_value = 32});
 		AddSetting({name = "metro_mod", description = "Metropolis cargo multiplier: "
-			easy_value = 20, medium_value = 9, hard_value = 1, custom_value = 12, flags = CONFIG_INGAME, min_value = 1, max_value = 500});
+			easy_value = 5, medium_value = 3, hard_value = 2, custom_value = 1, flags = CONFIG_INGAME, min_value = 1, max_value = 500});
 		AddSetting({name = "metro_gmod", description = "Metropolis growth multiplier:"
 			easy_value = 3, medium_value = 2, hard_value = 1, custom_value = 1, flags = CONFIG_INGAME, min_value = 1, max_value = 500});			
 		AddSetting({name = "metro_cgg", description = "Metropolis transport requirement (MTR): "
-			easy_value = 50, medium_value = 65, hard_value = 80, custom_value = 70, flags = CONFIG_INGAME, min_value = 30, max_value = 98});		
+			easy_value = 50, medium_value = 65, hard_value = 75, custom_value = 80, flags = CONFIG_INGAME, min_value = 30, max_value = 98});		
 		AddSetting({name = "local_to_req", description = "Subtract local transported passengers "
 			easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0, flags = CONFIG_INGAME | CONFIG_BOOLEAN});
 		AddSetting({name = "maxclaimsize", description = "Maximum population of a claimable town: ", 
 			easy_value = 750, medium_value = 500, hard_value = 250, custom_value = 200, flags = CONFIG_INGAME, min_value = 0, max_value = 4000, step_size = 25});	
-		AddLabels("maxclaimsize", {_0 = "Infinite"});
+		AddLabels("maxclaimsize", {_0 = "Infinite"});R
 		AddSetting({name = "growascity", description = "Unclaimed towns behave as cities: ", 
 			easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0, flags = CONFIG_INGAME | CONFIG_BOOLEAN});	
 		AddSetting({name = "min_size_max_growth", description = "Below this population growth is linear: ", 
-			easy_value = 1200, medium_value = 800, hard_value = 400, custom_value = 600, flags = CONFIG_INGAME, min_value = 50, max_value = 8000, step_size = 25});
+			easy_value = 1200, medium_value = 800, hard_value = 600, custom_value = 400, flags = CONFIG_INGAME, min_value = 50, max_value = 8000, step_size = 25});
 		AddSetting({name = "min_size_tr", description = "Below this population all towns grow: ", 
 			easy_value = 150, medium_value = 125, hard_value = 100, custom_value = 100, flags = CONFIG_INGAME, min_value = 50, max_value = 40000, step_size = 25});	
 		AddSetting({name = "slow_factor", description = "Town size at which town grows with one house per day in thousands: ", 
 			easy_value = 60, medium_value = 60, hard_value = 60, custom_value = 60, flags = CONFIG_INGAME, min_value = 10, max_value = 1000});
 		AddSetting({name = "mgrpct", description = "Max growth promillage:", 
-			easy_value = 400, medium_value = 300, hard_value = 200, custom_value = 500, flags = CONFIG_INGAME, min_value = 100, max_value = 65535});				
+			easy_value = 400, medium_value = 500, hard_value = 600, custom_value = 700, flags = CONFIG_INGAME, min_value = 100, max_value = 65535});				
 		AddSetting({name = "assim_factor", description = "factor needed to assimilate: "
-			easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 4, flags=0, min_value = 0, max_value = 1000});	
+			easy_value = 2, medium_value = 2, hard_value = 3, custom_value = 4, flags=0, min_value = 0, max_value = 1000});	
 		AddLabels("assim_factor", {_0 = "infinite"});	
 		AddSetting({name = "storefactor", description = "Town warehouse size (months): "
-			easy_value = 8, medium_value = 6, hard_value = 4, custom_value = 0, flags=0, min_value = 0, max_value = 360});
+			easy_value = 8, medium_value = 6, hard_value = 4, custom_value = 2, flags=0, min_value = 0, max_value = 360});
 		AddLabels("storefactor", {_0 = "infinite"});	
 		AddSetting({name = "store_min", description = "Town warehouse size (minimum): "
 			easy_value = 780, medium_value = 390, hard_value = 200, custom_value = 288, flags=0, min_value = 1, max_value = 2000});
 		AddSetting({name = "town_regrow", description = "Regrow towns, (% of starting pop): "
-			easy_value = 140, medium_value = 120, hard_value = 100, custom_value = 120, flags=0, min_value = 100, step_size = 10, max_value = 300});
+			easy_value = 140, medium_value = 120, hard_value = 120, custom_value = 100, flags=0, min_value = 100, step_size = 10, max_value = 300});
 		AddLabels("town_regrow", {_100 = "Do NOT regrow"});
 		AddSetting({name = "cities_setting", description = "Behaviour of cities: ",
 			easy_value = 0, medium_value = 0, hard_value = 6, custom_value = 6, flags = CONFIG_INGAME, min_value = 0, max_value = 6});
@@ -103,15 +103,15 @@ class CityBuilder extends GSInfo {
 		AddSetting({name = "swapfw", description = "Towns in the tropic require no water but more food: ", easy_value = 1, medium_value = 1, hard_value = 1, custom_value = 1, flags = CONFIG_INGAME, min_value = 0, max_value = 1});
 		AddLabels("swapfw", {_0 = "No", _1 = "Yes"});
 		AddSetting({name = "lowcargo", description = "Reduced shrink effect:",
-			easy_value = 360, medium_value = 180, hard_value = 20, custom_value = 60, flags = CONFIG_INGAME, min_value = 0, max_value = 1000, step_size = 20});
+			easy_value = 360, medium_value = 180, hard_value = 20, custom_value = 0, flags = CONFIG_INGAME, min_value = 0, max_value = 1000, step_size = 20});
 		AddLabels("lowcargo", {_0 = "Disabled"});
 		AddSetting({name = "introdelay", description = "Introduction Delay (yrs): ",
 			easy_value = 5, medium_value = 3, hard_value = 2, custom_value = 2, flags = CONFIG_INGAME, min_value = 0, max_value = 60});	
 		AddLabels("introdelay", {_0 = "Disabled"});
 		AddSetting({name = "cargomul", description = "Cargo Requirement Multiplier",
-			easy_value = 1000, medium_value = 1100, hard_value = 1200, custom_value = 1000, flags=0, min_value = 100, max_value = 5000});		
+			easy_value = 1000, medium_value = 1100, hard_value = 1200, custom_value = 1250, flags=0, min_value = 100, max_value = 5000});		
 		AddSetting({name = "intromul", description = "Introduction Population Multiplier",
-			easy_value = 1000, medium_value = 900, hard_value = 800, custom_value = 1000, flags=0, min_value = 250, max_value = 5000});	
+			easy_value = 1000, medium_value = 900, hard_value = 800, custom_value = 700, flags=0, min_value = 250, max_value = 5000});	
 			
 		}
 }
