@@ -47,6 +47,7 @@ function econ::getMailCargo() {return 2;}
 function econ::init() {
      this.multiplier_car = GSController.GetSetting("cargomul");
      this.multiplier_pop = GSController.GetSetting("intromul");
+     this.townprod_fct = GSController.GetSetting("metro_cgg") * 10;
         for(local i = 0; i < this.num_cargos; ++i) {
             this.enable_populations[i] *= this.multiplier_pop;
             this.enable_populations[i] /= 1000;
