@@ -690,7 +690,9 @@ function Town::Assimilate() {
 				    local f2 = GSTown.GetHouseCount(tid) / 8 * 5 - 5;
 				    if(f2 < 0){f2 = 0;}
 				    local c = f1 + f2; // + sqrt(f1) * sqrt(f2) * 2 << Removed for optimization...
-				    GSLog.Info(GSTown.GetName(tid) + " and "+ GSTown.GetName(this.id) + "req " + c);
+				    if(GSController.GetSetting("debug_level") > 6) {
+				        GSLog.Info("Assim: " GSTown.GetName(tid) + " and "+ GSTown.GetName(this.id) + "req " + c);
+				    }
 	// optimization: reuse f1
 				    f1 = GSTown.GetDistanceSquareToTile(tid,loc);
 				    if(c > f1){
@@ -805,7 +807,7 @@ function Town::UpdateGoal(){
 	}
 	local next = econ.GetNextDemand(this.pop);
 	if(next != -1) {
-		this.addGoalStory(GSText(GSText.STR_CITYBUILDER_GW_NEXT, 1 >> (this.econ.enable_order[next]), this.econ.enable_populations[next]));
+		this.addGoalStory(GSText(GSText.STR_CITYBUILDER_GW_NEXT, 1 << (this.econ.enable_order[next]), this.econ.enable_populations[next]));
 	}
 }
 

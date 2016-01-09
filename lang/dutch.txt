@@ -49,7 +49,7 @@ STR_CITYBUILDER_SIGN_HAMLET         :Groeiend!
 STR_CITYBUILDER_SIGN_VILLAGE        :1/1 passagiersdienst
 STR_CITYBUILDER_SIGN_VILLAGE_NG     :0/1 passagiersdienst
 
-STR_CITYBUILDER_SEEGOALWINDOW       :Eigenaar: {COMPANY}. Bekijk het doelenscherm of de verhaallijn voor meer informatie.
+STR_CITYBUILDER_SEEGOALWINDOW       :Bekijk het doelenscherm of de verhaallijn voor meer informatie.
 STR_CITYBUILDER_GW_DEMANDS_TO       :Bezorg
 STR_CITYBUILDER_GW_DEMANDS_FROM     :Distribueer
 STR_CITYBUILDER_GW_GOALS            :{BLACK}Benodigdheden van uw plaats ({PURPLE}violet{BLACK} = volledige groei op {GOLD}{NUM}%{BLACK} van benodigdheid): 

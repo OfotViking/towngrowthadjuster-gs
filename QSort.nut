@@ -16,6 +16,14 @@ function QSort(index, array){
 local l = index.len();
 if(l == 1){return array;}
 else if(l == 0){return [];}
+else if(l == 2){
+    if(index[0] <= index[1]) {
+        return array;
+    } else {
+        local a = [array[1], array[0]];
+        return a;
+    }    
+}
 // initialize 
 local pivot = index[l / 2];
 local index_lh = [];
@@ -51,6 +59,14 @@ function QSort_R(index, array){
 local l = index.len();
 if(l == 1){return array;}
 else if(l == 0){return [];}
+else if(l == 2){
+    if(index[0] >= index[1]) {
+        return array;
+    } else {
+        local a = [array[1], array[0]];
+        return a;
+    }    
+}
 // initialize 
 local pivot = index[l / 2];
 local index_lh = [];

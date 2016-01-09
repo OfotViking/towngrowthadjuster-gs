@@ -3,8 +3,6 @@
 require("econ.nut");
  class econ_yeti extends econ{ 
     constructor() {	
-        this.init();
-        
         // Cargo enable order, Needs to be overridden
         num_cargos = 5;
         enable_order = [16, 0, 2, 8, 4];

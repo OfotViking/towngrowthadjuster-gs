@@ -113,6 +113,15 @@ class CityBuilder extends GSInfo {
 			easy_value = 1000, medium_value = 1100, hard_value = 1200, custom_value = 1250, flags=0, min_value = 100, max_value = 5000});		
 		AddSetting({name = "intromul", description = "Introduction Population Multiplier",
 			easy_value = 1000, medium_value = 900, hard_value = 800, custom_value = 700, flags=0, min_value = 250, max_value = 5000});
-		}
+		AddSetting({name = "econ_custom", description = "Use custom Economy: ", easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0, flags = CONFIG_BOOLEAN});
+		for(local i = 0; i < 32; ++i){		
+		   AddSetting({name = "cargo_dlv["+i+"]", description = "Cargo #"+i+" delivery requirement", easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0, flags=0, min_value = 0, step_size = 1, max_value = 2000});  
+		    AddSetting({name = "cargo_sup["+i+"]", description = "Cargo #"+i+" supply requirement", easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0, flags=0, min_value = 0, step_size = 1, max_value = 2000});
+		    AddSetting({name = "cargo_int["+i+"]", description = "Cargo #"+i+" introduction population", easy_value = 200, medium_value = 200, hard_value = 200, custom_value = 200, flags=0, min_value = 200, step_size = 50, max_value = 1000000});
+		    AddSetting({name = "cargo_max["+i+"]", description = "Cargo #"+i+" full requirement population", easy_value = 500, medium_value = 500, hard_value = 500, custom_value = 500, flags=0, min_value = 250, step_size = 50, max_value = 1000000});
+		    AddSetting({name = "cargo_dcr["+i+"]", description = "Cargo #"+i+" decay rate", easy_value = 50, medium_value = 50, hard_value = 50, custom_value = 50, flags=0, min_value = 20, step_size = 1, max_value = 1000}); 
+		    AddLabels("cargo_dcr["+i+"]", {_1000 = "No storage"});
+        }
+    }	
 }
 RegisterGS(CityBuilder());

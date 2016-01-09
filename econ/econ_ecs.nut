@@ -6,7 +6,6 @@ require("econ.nut");
     factprod = 0;
  
     constructor() {	
-        this.init();
         this.getVectors();
                 
         const PASS = 0;

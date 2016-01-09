@@ -3,8 +3,6 @@
 require("econ.nut");
  class econ_firs extends econ{ 
     constructor() {	
-        this.init();
-        
         // Cargo enable order, Needs to be overridden
         num_cargos = 8;
         enable_order = [28, 0, 11, 2, 5, 29, 25, 13];

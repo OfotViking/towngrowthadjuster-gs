@@ -6,8 +6,6 @@ require("econ.nut");
  
  
     constructor() {	
-        this.init();
-        
         // Cargo enable order, Needs to be overridden
         num_cargos = 5;
         enable_order = [5, 0, 2, 11, 3];

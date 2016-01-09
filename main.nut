@@ -241,6 +241,12 @@ function CityBuilder::SetupEconomy() {
     // Todo: Improve this
     // Detect FIRS via recyclables
     local landscape = null;
+    if(GSController.GetSetting("econ_custom") == 1) {
+        require("econ/econ_custom.nut");
+        this.myEcon = econ_custom();
+        return;
+    }
+    
     if(GSCargo.GetCargoLabel(31) == "RCYC") {
         require("econ/econ_firs.nut");
         this.myEcon = econ_firs();
