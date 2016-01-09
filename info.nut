@@ -67,7 +67,7 @@ class CityBuilder extends GSInfo {
 			easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0, flags = CONFIG_INGAME | CONFIG_BOOLEAN});
 		AddSetting({name = "maxclaimsize", description = "Maximum population of a claimable town: ", 
 			easy_value = 750, medium_value = 500, hard_value = 250, custom_value = 200, flags = CONFIG_INGAME, min_value = 0, max_value = 4000, step_size = 25});	
-		AddLabels("maxclaimsize", {_0 = "Infinite"});R
+		AddLabels("maxclaimsize", {_0 = "Infinite"});
 		AddSetting({name = "growascity", description = "Unclaimed towns behave as cities: ", 
 			easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0, flags = CONFIG_INGAME | CONFIG_BOOLEAN});	
 		AddSetting({name = "min_size_max_growth", description = "Below this population growth is linear: ", 
@@ -96,7 +96,8 @@ class CityBuilder extends GSInfo {
 		AddSetting({name = "city_cgg", description = "City growth Multiplier promillage: "
 			easy_value = 2400, medium_value = 2200, hard_value = 2000, custom_value = 1400, flags = CONFIG_INGAME, min_value = 1, max_value = 65535});
 		// CARGO SETTINGS
-		AddSetting({name = "injection", description = "Enable Freeze:", easy_value = 0, medium_value = 0, hard_value = 1, custom_value = 0, flags = CONFIG_INGAME, min_value = 0, max_value = 1});
+		AddSetting({name = "injection", description = "Enable Freeze:", easy_value = 0, medium_value = 0, hard_value = 1, custom_value = 0, 
+		    flags = CONFIG_INGAME, min_value = 0, max_value = 1});
 		AddLabels("injection", {_0 = "Off", _1 = "On"});
 		AddSetting({name = "paxcargo_istownind", description = "Industries that produce Passengers are Town Industries", 
 			easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0, flags = CONFIG_INGAME | CONFIG_BOOLEAN});					
@@ -111,8 +112,7 @@ class CityBuilder extends GSInfo {
 		AddSetting({name = "cargomul", description = "Cargo Requirement Multiplier",
 			easy_value = 1000, medium_value = 1100, hard_value = 1200, custom_value = 1250, flags=0, min_value = 100, max_value = 5000});		
 		AddSetting({name = "intromul", description = "Introduction Population Multiplier",
-			easy_value = 1000, medium_value = 900, hard_value = 800, custom_value = 700, flags=0, min_value = 250, max_value = 5000});	
-			
+			easy_value = 1000, medium_value = 900, hard_value = 800, custom_value = 700, flags=0, min_value = 250, max_value = 5000});
 		}
 }
 RegisterGS(CityBuilder());

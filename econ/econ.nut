@@ -63,7 +63,7 @@ function econ::init() {
 // Delivery requirements for sustain. 
 function econ::deliveryReqs(population, cargo_produced, accept_reqs, prod_reqs, townID) {
     local i = 0;
-    while(population >= enable_populations[i] && i < this.num_cargos) {
+    while(i < this.num_cargos && population >= enable_populations[i]) {
         if(population < max_populations[i]) {
             local pop_diff = population - enable_populations[i]
             local max_diff = max_populations[i] - enable_populations[i];                        

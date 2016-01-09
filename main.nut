@@ -240,6 +240,7 @@ function CityBuilder::SetupEconomy() {
     // Note: This is hacky code -- We use to detect FIRS/ECS/YETI
     // Todo: Improve this
     // Detect FIRS via recyclables
+    local landscape = null;
     if(GSCargo.GetCargoLabel(31) == "RCYC") {
         require("econ/econ_firs.nut");
         this.myEcon = econ_firs();
@@ -258,18 +259,21 @@ function CityBuilder::SetupEconomy() {
         return;
     }
     
-    landscape = GSGame.GetLandscape();
+    landscape = GSGame.GetLandscape(); 
     switch(landscape) {
         case(GSGame.LT_TEMPERATE):
             this.myEcon = econ();        
             break;    
         case(GSGame.LT_ARCTIC):
+            require("econ/econ_arctic.nut");
             this.myEcon = econ_arctic(); 
             break;
         case(GSGame.LT_TROPIC):
+            require("econ/econ_desert.nut");
             this.myEcon = econ_desert(); 
             break;
         case(GSGame.LT_TOYLAND):
+            require("econ/econ_toyland.nut");
             this.myEcon = econ_toyland(); 
             break;    
     }
