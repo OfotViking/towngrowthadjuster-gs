@@ -1033,27 +1033,4 @@ else{
 	}
 }
 
-// Get the cargo line for the cargo_id. 
-function Town::GetTownWindowCargoLineMonochrome(i){
-local cargo_id = this.econ.enable_order[i];
-if(this.econ.decay_rates[i] != 1000)
-	{
-	return GSText(GSText.STR_CITYBUILDER_TW_MA,1 << cargo_id, ""+supply_cargo[i] + " / " + goal_cargo[i] + " | Storage: " + stocked_cargo[i]);
-	}
-else
-	{
-	return GSText(GSText.STR_CITYBUILDER_TW_MD,1 << cargo_id, ""+supply_cargo[i] + " / " + goal_cargo[i]);
-	}
-}
-
-function Town::GetNewsCargoLineMonochrome(i){
-local cargo_id = this.econ.enable_order[i];
-if(this.econ.decay_rates[i] != 1000)
-	{
-	return GSText(GSText.STR_CITYBUILDER_NEWS_MA,1 << cargo_id, ""+supply_cargo[i] + " / " + goal_cargo[i] + " | Storage: " + stocked_cargo[i]);
-	}
-else{
-	return GSText(GSText.STR_CITYBUILDER_NEWS_MD,1 << cargo_id, ""+supply_cargo[i] + " / " + goal_cargo[i]);
-	}
-}
 

@@ -125,8 +125,6 @@ STR_CITYBUILDER_NEWS_D              :{}{CARGO_LIST}: {NUM} / {NUM}
 STR_CITYBUILDER_NEWS_NEXT           :{}Next: {CARGO_LIST} at {NUM} population!
 STR_CITYBUILDER_NEWS_HAMLET         :The town is so small it will grow by itself!
 STR_CITYBUILDER_NEWS_VILLAGE        :{}Supply a monthly passenger transport service to grow your village.
-STR_CITYBUILDER_NEWS_MA             :{}{CARGO_LIST}: {RAW_STRING}
-STR_CITYBUILDER_NEWS_MD             :{}{CARGO_LIST}: {RAW_STRING}
 STR_CITYBUILDER_NEWS_MAILTR_A		:{NUM}% mail transported
 STR_CITYBUILDER_NEWS_MAILTR_B		:Only {NUM}% mail - Take more mail
 STR_CITYBUILDER_NEWS_PAXTR_A		:{NUM}% pass transported
@@ -146,8 +144,6 @@ STR_CITYBUILDER_TW_G                :{}{LTBLUE}{CARGO_LIST}: {BLUE}{NUM} {BLACK}
 STR_CITYBUILDER_TW_NEXT             :{}{BLACK}Next: {LTBLUE}{CARGO_LIST}{BLACK} at {RED}{NUM}{BLACK} population!
 STR_CITYBUILDER_TW_HAMLET           :{WHITE}This hamlet is so small it will grow by itself!
 STR_CITYBUILDER_TW_VILLAGE          :{}{WHITE}This village needs a monthly passenger transport service to grow.
-STR_CITYBUILDER_TW_MA               :{}{LTBLUE}{CARGO_LIST}: {BLACK}{RAW_STRING}
-STR_CITYBUILDER_TW_MD               :{}{LTBLUE}{CARGO_LIST}: {BLACK}{RAW_STRING}
 
 STR_CITYBUILDER_SB_GOTO             :{GREEN}Go to the town
 STR_CITYBUILDER_SB_POPULATION       :Town population: {YELLOW}{NUM}

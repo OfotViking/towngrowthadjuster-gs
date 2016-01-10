@@ -1,4 +1,4 @@
-﻿STR_CITYBUILDER_TOWN                :Ceci est un rapport de {TOWN}. Il abrite {NUM} citoyens inscrits. {}
+STR_CITYBUILDER_TOWN                :Ceci est un rapport de {TOWN}. Il abrite {NUM} citoyens inscrits. {}
 STR_CITYBUILDER_CARGOLINE           :{NUM} sur {NUM} {CARGO_LIST}.{} 
 STR_CITYBUILDER_WAREHOUSE           :Entrepôts détiennent une autre {NUM} sur {NUM} unités
 STR_CITYBUILDER_VILLAGE             :Fournir un service mensuel de transport de passagers pour démarrer la croissance. {}
@@ -88,8 +88,6 @@ STR_CITYBUILDER_NEWS_D              :{}{CARGO_LIST}: {NUM} / {NUM}
 STR_CITYBUILDER_NEWS_NEXT           :{}Suivant: {CARGO_LIST} à {NUM} population!
 STR_CITYBUILDER_NEWS_HAMLET         :La ville est si petit qu'il va croître par lui-même!
 STR_CITYBUILDER_NEWS_VILLAGE        :{}Fournir un service de transport de passagers par mois pour développer votre village.
-STR_CITYBUILDER_NEWS_MA             :{}{CARGO_LIST}: {RAW_STRING}
-STR_CITYBUILDER_NEWS_MD             :{}{CARGO_LIST}: {RAW_STRING}
 STR_CITYBUILDER_NEWS_MAILTR_A		:{NUM}% du courrier transporté.
 STR_CITYBUILDER_NEWS_MAILTR_B		:Seulement {NUM}% du courrier transporté. Transports plus de courrier.
 STR_CITYBUILDER_NEWS_PAXTR_A		:{NUM}% des passagers transportés.
@@ -109,8 +107,6 @@ STR_CITYBUILDER_TW_G                :{}{LTBLUE}{CARGO_LIST}: {BLUE}{NUM} {BLACK}
 STR_CITYBUILDER_TW_NEXT             :{}{BLACK}Suivant: {LTBLUE}{CARGO_LIST}{BLACK} à {RED}{NUM}{BLACK} population!
 STR_CITYBUILDER_TW_HAMLET           :{WHITE}Ce hameau est si petit qu'il va croître par lui-même!
 STR_CITYBUILDER_TW_VILLAGE          :{}{WHITE}Ce village a besoin d'un service de transport de passagers mensuelle de croître.
-STR_CITYBUILDER_TW_MA               :{}{LTBLUE}{CARGO_LIST}: {BLACK}{RAW_STRING}
-STR_CITYBUILDER_TW_MD               :{}{LTBLUE}{CARGO_LIST}: {BLACK}{RAW_STRING}
 
 STR_CITYBUILDER_SB_GOTO             :{GREEN}Allez à la ville
 STR_CITYBUILDER_SB_POPULATION       :La population de la ville:{YELLOW}{NUM}
