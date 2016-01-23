@@ -33,7 +33,7 @@ class econ {
     tpa = [0,1,1,0,0];
         
     constructor() {	
-        GSLog.Info("Loading Economy ", Log.LVL_WARNING)
+        GSLog.Info("Loading Economy");
     }
     function init();    
     function deliveryReqs(population, cargo_produced, accept_reqs, prod_reqs, townID);
