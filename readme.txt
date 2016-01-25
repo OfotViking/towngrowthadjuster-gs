@@ -116,7 +116,7 @@ Setting Name: Point to goal GUI if goals > 3
 Setting Range: No/Yes. If turned on the town GUI window will point users to the
 goal GUI window if both are available for a town and a fourth goal exists.
 -------------------------------------------------------------------------------
-Setting Name: Town Labels
+Setting Name: Show owner above town name
 Setting Range: On/Off
 Comments: Adds labels above town name with it's owner. Off by default. Recommend
 turning this on for multiplayer games, especially with novice players.
@@ -144,7 +144,7 @@ Comments: Of all industry types, Any types that do NOT create cargo but DO accep
  a water tower in the normal desert climate. At 500, about half the towns would
 have water towers, and about 1/4 both water towers and banks. 
 ---------------------------------------------------------------------------------
-Setting Name: Game Length
+Setting Name: Game Length in years
 Setting Range: 0-4,000
 Comments: Set to 0 for an infinite game. Set to a finite number for a goal game.
 A 12-year game lasts about 3 hours. 
@@ -163,7 +163,7 @@ population. In metropolis, all companies work together to grow a random town as
 high as possible. This town will demand high amounts of mail, yet give 
 large amounts of passengers. 
 -------------------------------------------------------------------------------
-Setting Name: Maximum HQ Distance
+Setting Name: Maximum HQ Distance to claim town
 Setting Range: 5-32
 Comments: The distance is manhattan. If you happen to place your HQ too far, 
 you can 'move' the HQ closer by re-plopping it. A helpful warning message pops 
@@ -181,21 +181,9 @@ Comments:  The metropolis should grow a little faster. 12x is recommended.
 Setting Name: Metropolis transport requirement (MTR)
 Setting Range: 30-98%
 Comments:  Recommended 65-75. Above 80 is really hard to keep up. 
-Mostly because of vehicle ratings. Also used in city behaviour 2 and 3.
--------------------------------------------------------------------------------
-Setting Name: Passenger transport requirement (PTR)
-Setting Range: 0-98%
-Comments:  Recommended 65-75, 75-85 for single town CB modes.
-Mostly because of vehicle ratings. %age of passengers that needs to be transported
-away from towns from them to grow (doesn't matter where). Setting works very well
-with YACD.
--------------------------------------------------------------------------------
-Setting Name: Mail transport requirement (TTR)
-Setting Range: 0-98%
-Comments: Recommended 65-75, 75-85 for single town CB modes.
-Mostly because of vehicle ratings. %age of mail that needs to be transported
-away from towns from them to grow (doesn't matter where). Setting works very well
-with YACD.
+Mostly because of vehicle ratings. Also used in city behaviour 2 and 3. Used 
+by most economies to determine the 'self production fraction' added to the 
+supply requirement for passengers and mail. 
 -------------------------------------------------------------------------------
 Setting name: Subtract local transported passengers.
 Setting Range: On/Off
@@ -226,25 +214,20 @@ Comments: Setting this above the above setting may have weird effects. Recommend
 to keep at least 100 in temperate and snow setting. Toyland and Desert at least 75.
 This is to ensure your town gets to eventually accept passengers (and food in Desert).
 -------------------------------------------------------------------------------
-Setting Name: variation in cargo requirements
-Setting Range: 0-50%
-Comments: Creates a random variation in cargo requirements. Note that you set the
-sigma of the distribution, so variations above the percentage can be observed, 
-except when setting this off (to 0).
--------------------------------------------------------------------------------
-Setting Name: Slowing factor
+Setting Name: Town size at which town grows with one house per day in thousands
 Setting Range: 10-1000
 Comments: This is a factor in growth speed. Set it twice as high to make towns
 grow twice as slow as normally. The recommended factor is 60. For a faster-paced
-game, set this higher, and for a slower-paced game set it slower. This is a very
+game, set this lower, and for a slower-paced game set it higher. This is a very
 powerful setting, fine-tuning it for your setup is recommended. A setting of 40
 means a town of 4,000 has a max growth speed of one house per ten days.
-------------------------------------------------------------------------------
-Setting Name: Stagnation window promillage
-Setting Range: 0-65,535
-Comments: This is a small window in which a town doesn't grow or shrink. The script
-works well without it though. For example, if you set it to 10%, delivering 5% 
-extra stuff above the requirement will not cause a town to grow, but 12% would.
+-------------------------------------------------------------------------------
+Setting Name: Factor needed to assimilate
+Setting Range: 0-1000
+Comments: How much larger a town needs to be to absorb a smaller town. The smaller 
+town will still have it's own demands, but any population in it counts towards
+the score of the company that claimed the larger town. A town can only absorb
+other towns that have the center square close enough to their own center square.
 -------------------------------------------------------------------------------
 Setting Name: Max Growth promillage
 Setting Range: 0-65,535
@@ -291,13 +274,10 @@ Comments: Enables users to do injections. With this setting on, a user can
 stop delivering passengers to their town and the town will not shrink from 
 a cargo shortage. 
 -------------------------------------------------------------------------------
-Setting Name: The cargo ID representing food
-Setting Range: 0-31
-Comments: Important for the desert and arctic climate. Please set this correctly.
--------------------------------------------------------------------------------
-Setting Name: The cargo ID representing water
-Setting Range: 0-31
-Comments: Important for the desert climate. Please set this correctly.
+Setting Name: Industries that produce passengers are Town Industries
+Setting Range: On/Off
+Comments: Any industry that produces passengers is regarded as a Town Industry, 
+even if it is not a tertiary industry. Defaults to 'Off'
 -------------------------------------------------------------------------------
 Setting Name: Towns in the tropic require no water but more food
 Setting Range: Yes/No
@@ -305,16 +285,6 @@ Comments: If you do not use NewGRF, setting this to YES allows you to grow
 towns in the rainforest in the subtropic climate. Set this to NO only if you 
 have a water tower or other building that can accept water that can be built
 on rainforest tiles!
--------------------------------------------------------------------------------
-Setting Name: The cargo ID representing passengers
-Setting Range: 0-31
-Comments: Important for the Metropolis gametype. While passengers are recommended, 
-you may experiment with other town-generated cargoes such as mail. 
--------------------------------------------------------------------------------
-Setting Name: The cargo ID representing mail
-Setting Range: 0-31
-Comments: Important for the Metropolis gametype. While mail is recommended, 
-you may experiment with other town-generated cargoes such as passengers. 
 -------------------------------------------------------------------------------
 Setting Name: Reduced shrink effect:
 Setting Range: 0-1000
@@ -324,23 +294,44 @@ delivering at all, the town won't shrink at full speed, but only a little.
 The higher the setting, the more lax the game is. I recommend a value of ~40 or so.
 -------------------------------------------------------------------------------
 Setting Name: Introduction Delay
-Setting Range: -1 to 60
-Comments: Set to -1 to turn automatic cargo introduction off. Warning: Doing this
-will mean the town may require unknown cargoes, set up your cargo settings 
+Setting Range: 0 to 60
+Comments: Set to 0 to turn automatic cargo introduction off. Warning: Doing this
+will mean a town may require unknown cargoes, set up your cargo settings 
 appropriately. This will manage the amount of years it takes before a cargo
 is automatically introduced when a new industry type is introduced. 
 -------------------------------------------------------------------------------
-Setting Name: cargo #xx required monthly per 1,000 pop
+Setting Name: Cargo requirement multiplier
+Setting Range: 100 to 5000
+Comments: Multiply the cargo requirements in a pre-set economy with a fixed number.
+-------------------------------------------------------------------------------
+Setting Name: Introduction population multiplier
+Setting Range: 250 to 5000
+Comments: Modify for cargoes to be introduced faster or slower with a pre-set 
+economy. Note that very low values may result in towns wanting goods they can't 
+accept yet. 
+-------------------------------------------------------------------------------
+Setting Name: Use custom Economy
+Setting Range: 0-1
+Comments: If you use this setting, a 'custom' economy is used instead of the regular
+economy. The multipliers above have no effect, instead the requirements are as 
+specified with the options below this. 
+-------------------------------------------------------------------------------
+Setting Name: cargo #xx delivery requirement
 Setting Range: 0-2,000
 Comments: If you don't have jumbling or variation, a town of 1,000 people would
-monthly require this much cargo. It is recommended for regular citybuilder that
-you set a town's cargo requirements above it's own production values for passengers
-and similar cargoes. Set to 0 for unused cargoes. It is recommended to set the mail 
-requirement low for good metropolis games. (just so high that the metropolis
-can't grow off it's own mail). For freebuilder and coop settings below the town's 
-production up to slightly above are good choices.
+monthly require this much cargo delivered from it. Set to 0 for unused cargoes.
 -------------------------------------------------------------------------------
-Setting Name: cargo #xx below which req is waived
+Setting Name: cargo #xx supply requirement 
+Setting Range: 0-2000
+Comments: If you don't have jumbling or variation, a town of 1,000 people would
+monthly require this much cargo supplied to it. It is recommended for regular 
+citybuilder that you set a town's cargo requirements above it's own production 
+values for passengers and similar cargoes. Set to 0 for unused cargoes. It is 
+recommended to set the mail requirement low for good metropolis games. (just so 
+high that the metropolis can't grow off it's own mail). For freebuilder and coop 
+settings below the town's production up to slightly above are good choices.
+-------------------------------------------------------------------------------
+Setting Name: cargo #xx introduction population
 Setting Range: 100-200,000
 Comments: This is an important setting. It determines the flow of the game, 
 especially in co-operative, and to a lesser extent freebuilder mode. Ideally, 
@@ -350,18 +341,15 @@ out the first two numbers, or an exponential progression (200, 300, 450, 675, ..
 Luukland uses 250,500,1000,1500,2500,4000,5500. 
 -------------------------------------------------------------------------------
 Setting Name: Cargo #xx decay rate:
-Setting Range: 0-1000
+Setting Range: 20-1000
 Comments: Another promillage. You should set the decay rate of cargoes required
-every month to 1000. It is recommended to set at least some decay rate for all
-used cargoes if you set warehouse size to infinite. Otherwise, cargo might accumulate
-to the point where there is more than 2 million units present, which the script
-cannot handle!
+every month to 1000. 
 -------------------------------------------------------------------------------
-Setting Name: Cargo #xx transition length:
+Setting Name: Cargo #xx full requirement population
 Setting Range: 0-200000
-Comments: If town population is between waive and waive + transition amounts, 
+Comments: If town population is between intro and full requirement amounts, 
 the cargo required will be reduced. For example, with 10 promille requirement, 
-1000 waive, and 2000 transition, a town of 2000 will only require 0.5% or 10 units
+1000 waive, and 3000 full, a town of 2000 will only require 0.5% or 10 units
 per month. A town of 2,500 would require 0.75% or 19 units per month. This is 
 to prevent towns that are slightly above a waive number from suddenly requiring much
 more cargo. It's highly recommended to have reasonably large transition lengths for
