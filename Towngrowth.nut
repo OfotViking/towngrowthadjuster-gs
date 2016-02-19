@@ -493,7 +493,7 @@ function Town::News(){
 	    case(0):
 		    if(this.pop < tsize) {
 			    if(next != -1) {
-					    GSTown.SetText(id, GSText(GSText.STR_CITYBUILDER_CONCAT01, 
+					    GSTown.SetText(id, GSText(GSText.STR_CITYBUILDER_CONCAT02, 
 						    GSText(GSText.STR_CITYBUILDER_TW_HAMLET), 
 						    GSText(GSText.STR_CITYBUILDER_TW_NEXT, 1 << econ.enable_order[next], econ.enable_populations[next])));
 				    } else {
