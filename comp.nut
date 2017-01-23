@@ -374,7 +374,7 @@ function Company::SetScore_type0(){
 	addscore += this.AddPickupAmountTypeZero(4);
 	addscore += this.AddPickupAmountTypeZero(5);
 	score += addscore;	
-	GSNews.Create(GSNews.NT_GENERAL, GSText(GSText.STR_CITYBUILDER_SUBSIDY_SCORE, addscore.tointeger()) ,this.id);
+	GSNews.Create(GSNews.NT_GENERAL, GSText(GSText.STR_CITYBUILDER_SUBSIDY_SCORE, addscore.tointeger()), this.id, GSNews.NR_NONE, 0);
 	this.SetScore_type0_goal(5, GSText.STR_CITYBUILDER_SUBSIDY_3, 3 - month % 3);
 	this.SetScore_type0_goal(4, GSText.STR_CITYBUILDER_SUBSIDY_3, 6 - month % 3);
 	this.SetScore_type0_goal(3, GSText.STR_CITYBUILDER_SUBSIDY_3, 9 - month % 3);

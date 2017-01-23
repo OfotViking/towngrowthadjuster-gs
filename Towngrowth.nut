@@ -564,32 +564,32 @@ function Town::News(){
 			    nwsmsg = "";
 			    switch(this.is_growing) {
 				    case(0): 
-					    nwsmsg += GSTown.GetName(this.id)+ " is not growing. D/S/R: ";
+					    nwsmsg += GSTown.GetName(this.id)+ " is not growing. [Cargo Delivered/Stored/Required] _ [";
 					    break;
 				    case(1):
-					    nwsmsg += GSTown.GetName(this.id)+ " is growing slowly. D/S/R: ";
+					    nwsmsg += GSTown.GetName(this.id)+ " is growing slowly. [Cargo Delivered/Stored/Required] _ [";
 					    break;		
 				    case(2):
-					    nwsmsg += GSTown.GetName(this.id)+ " is stagnant. D/S/R: ";
+					    nwsmsg += GSTown.GetName(this.id)+ " is stagnant. [Cargo Delivered/Stored/Required] _ [";
 					    break;	
 				    case(3):
-					    nwsmsg +=GSTown.GetName(this.id)+ " is growing! D/S/R: ";
+					    nwsmsg +=GSTown.GetName(this.id)+ " is growing! [Cargo Delivered/Stored/Required] _ [";
 					    break;			
 			    }
 		    for(local i = 0; i < this.econ.num_cargos; i++) {
 			    if(goal_cargo[i] > 0 && this.pop > econ.enable_populations[i]) {
-			    if(q) nwsmsg += ", "
+			    if(q) nwsmsg += "] _ ["
 			    q = 1;
 			    if(this.econ.decay_rates[i] != 1000) {
-				    nwsmsg += (supply_cargo[i]).tostring() + "/" +(stocked_cargo[i]).tostring() + "/" +
-					    ((goal_cargo[i]).tointeger()).tostring() + " " + GSCargo.GetCargoLabel(this.econ.enable_order[i]);
+				    nwsmsg += GSCargo.GetCargoLabel(this.econ.enable_order[i]) + " " + (supply_cargo[i]).tostring() + "/" +(stocked_cargo[i]).tostring() + "/" +
+					    ((goal_cargo[i]).tointeger()).tostring();
 					    } else {
-				    nwsmsg += (supply_cargo[i]).tostring() + "/" +
-					    ((goal_cargo[i]).tointeger()).tostring() + " " + GSCargo.GetCargoLabel(this.econ.enable_order[i]);
+				    nwsmsg += GSCargo.GetCargoLabel(this.econ.enable_order[i]) + " " + (supply_cargo[i]).tostring() + "/X/" +
+					    ((goal_cargo[i]).tointeger()).tostring();
 					    }
 				    }
 			    }
-		    nwsmsg += ".";
+		    nwsmsg += "] _ (Open story book for details)";
 		    if(q == 0) {
 			    if(this.pop < tsize) {
 				    nwsmsg += " The town does not have any demands yet."
@@ -691,7 +691,7 @@ function Town::Assimilate() {
 				    if(f2 < 0){f2 = 0;}
 				    local c = f1 + f2; // + sqrt(f1) * sqrt(f2) * 2 << Removed for optimization...
 				    if(GSController.GetSetting("debug_level") > 6) {
-				        GSLog.Info("Assim: " GSTown.GetName(tid) + " and "+ GSTown.GetName(this.id) + "req " + c);
+				        GSLog.Info("Assim: " + GSTown.GetName(tid) + " and "+ GSTown.GetName(this.id) + "req " + c);
 				    }
 	// optimization: reuse f1
 				    f1 = GSTown.GetDistanceSquareToTile(tid,loc);

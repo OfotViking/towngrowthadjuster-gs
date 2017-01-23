@@ -88,6 +88,9 @@ class CityBuilder extends GSController
 // for testing sendstats
 //require("sendstats.nut");	
 	
+// stuff
+require("motd.nut");
+	
 	function CityBuilder::Save()
 {
 	if(GSController.GetSetting("debug_level") > 0)
@@ -854,6 +857,7 @@ if(GSCompany.ResolveCompanyID(GSCompany.COMPANY_SELF) != GSCompany.COMPANY_INVAL
 		Log.Info("Company Found", Log.LVL_INFO);
 	this.InitNewCompany(GSCompany.COMPANY_SELF);
 	}
+	this.SetupMotd();
 
 }
 /*
@@ -1010,9 +1014,9 @@ function CityBuilder::ManageIntroductionDates(){
 			    for (local cid = GSCompany.COMPANY_FIRST; cid <= GSCompany.COMPANY_LAST; cid++){
 				    if (GSCompany.ResolveCompanyID(cid) != GSCompany.COMPANY_INVALID){
 					    if(i == 0) {
-						    GSNews.Create(GSNews.NT_GENERAL, GSText(GSText.STR_CITYBUILDER_CARGO_INTRO, 1<<i,GSController.GetSetting("size"+i)), cid);
+						    GSNews.Create(GSNews.NT_GENERAL, GSText(GSText.STR_CITYBUILDER_CARGO_INTRO, 1<<i,GSController.GetSetting("size"+i)), cid, GSNews.NR_NONE, 0);
 					    } else {
-						    GSNews.Create(GSNews.NT_GENERAL, GSText(GSText.STR_CITYBUILDER_CARGO_TBINTRO, 1<<i, GSController.GetSetting("size"+i),i,i), cid);
+						    GSNews.Create(GSNews.NT_GENERAL, GSText(GSText.STR_CITYBUILDER_CARGO_TBINTRO, 1<<i, GSController.GetSetting("size"+i),i,i), cid, GSNews.NR_NONE, 0);
 					    }
 				    }
 			    }
