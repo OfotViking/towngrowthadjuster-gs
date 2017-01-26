@@ -50,7 +50,7 @@ function econ_custom::loadCargoes() {
         this.tpa = QSort(tpa_presort, tpa_presort);
         this.num_cargos = enable_order_presort.len();
     } else {
-        GSLog.Info("Custom economy specified, but no requirements found. ", Log.LVL_WARNING)
+        GSLog.Info("Custom economy specified, but no requirements found. ", Log.LVL_INFO)
         this.enable_order = [];
         this.enable_populations = [];
         this.max_populations = [];
