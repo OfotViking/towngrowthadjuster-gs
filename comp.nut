@@ -254,7 +254,7 @@ function Company::SetScore(){
 switch(this.gametype)
 {
 case(0):
-this.SetScore_type0();
+//this.SetScore_type0();
 break;
 case(1):
 this.SetScore_type1();
@@ -506,6 +506,9 @@ function Manage(companies);
 };
 
 function SList::Manage(companies){
+if(GSController.GetSetting("gametype") != 0) {
+
+
 foreach(goal in goals)
 	{
 	GSGoal.Remove(goal);
@@ -524,4 +527,4 @@ QSort(scores, nums);
 for(local j = 0; j < companies.len(); ++j){
  GSLog.Info(companies[j].id + ": Score: " + companies[j].score.tointeger());
  goals.push(GSGoal.New(GSCompany.COMPANY_INVALID, GSText(GSText.STR_CITYBUILDER_SCORELIST, companies[j].id, companies[j].score.tointeger()), GSGoal.GT_NONE, 0));}
-}
+}}
